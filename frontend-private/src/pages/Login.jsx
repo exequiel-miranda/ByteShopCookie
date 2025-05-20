@@ -44,7 +44,7 @@ const renderBody = useCallback(() => {
 
 
     };*/
-/*
+  /*
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
@@ -59,9 +59,9 @@ const renderBody = useCallback(() => {
     }
     
     
-  };*/const SERVER_URL = "http://localhost:4000/api";
+  };*/ const SERVER_URL = "https://byteshopcookie.onrender.com/api";
 
-   const HandleLogin = async (e) => {
+  const HandleLogin = async (e) => {
     e.preventDefault();
     console.log(email, password, "email y password desde el login");
     try {
@@ -77,7 +77,7 @@ const renderBody = useCallback(() => {
       }
 
       const data = await response.json();
-      alert("Login ok")
+      alert("Login ok");
       //localStorage.setItem("authToken", data.token);
       //localStorage.setItem("user", JSON.stringify({ email }));
       //setAuthCokie(data.token);
@@ -149,7 +149,6 @@ const renderBody = useCallback(() => {
           }}
         />
       </div>
-
     </div>
   );
 };

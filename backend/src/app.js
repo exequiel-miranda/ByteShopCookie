@@ -6,7 +6,7 @@
  */
 
 import express from "express";
-import cors from "cors";
+
 import productsRoutes from "./routes/products.js";
 import clientsRoutes from "./routes/clients.js";
 import categoriesRoutes from "./routes/categories.js";
@@ -23,39 +23,25 @@ import cookieParser from "cookie-parser";
 import passwordRecoveryRoutes from "./routes/passwordRecovery.js";
 import paymentRoutes from "./routes/payment.js";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 
-// Settings
-// TODO: aqui van algunos ajustes
-
 // Middlewares
 app.use(
   cors({
-    origin: "http://localhost:5173", // Dominio del cliente
-    credentials: true, // Permitir envío de cookies y credenciales
+    origin: "*",
+    // Permitir envío de cookies y credenciales
+    credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
 import { validateAuthToken } from "./middlewares/validateAuthToken.js";
 
-// Routescon validación de inicio de sesión
-/*
-app.use("/api/products", validateAuthToken(), productsRoutes);
-app.use("/api/clients", validateAuthToken(), clientsRoutes);
-app.use("/api/categories", validateAuthToken(), categoriesRoutes);
-app.use("/api/brands", validateAuthToken(), brandsRoutes);
-app.use("/api/models", validateAuthToken(), modelsRoutes);
-app.use("/api/employees", validateAuthToken(["employee"]), employeesRoutes);
-app.use("/api/paymentMethods", validateAuthToken(), paymentMethodsRoutes);
-app.use("/api/orders", validateAuthToken(), ordersRoutes);
-app.use("/api/purchases", validateAuthToken(), purchasesRoutes);
-app.use("/api/logout", validateAuthToken(), logoutRoutes);
-app.use("/api/payment", validateAuthToken(), payment);
-*/
 app.use("/api/products", productsRoutes);
 app.use("/api/clients", clientsRoutes);
 app.use("/api/categories", categoriesRoutes);
