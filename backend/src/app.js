@@ -35,8 +35,8 @@ app.use(
     origin: "*",
     // Permitir envío de cookies y credenciales
     //  credentials: true,
-    methods: "GET,POST", // Asegúrate de que tu servidor permita los métodos adecuados
-    allowedHeaders: "Content-Type, Authorization",
+    //methods: "GET,POST", // Asegúrate de que tu servidor permita los métodos adecuados
+   // allowedHeaders: "Content-Type, Authorization",
   })
 );
 //fn
