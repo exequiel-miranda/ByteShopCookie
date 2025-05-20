@@ -39,7 +39,7 @@ app.use(
     allowedHeaders: "Content-Type, Authorization",
   })
 );
-
+//fn
 app.use(express.json());
 app.use(cookieParser());
 import { validateAuthToken } from "./middlewares/validateAuthToken.js";
