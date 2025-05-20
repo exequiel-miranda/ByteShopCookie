@@ -32,7 +32,7 @@ const app = express();
 // Middlewares
 app.use(
   cors({
-    origin: "https://byteshopcookie.onrender.com/",
+    origin: "https://byte-shop-cookie.vercel.app/",
     // Permitir envío de cookies y credenciales
     credentials: true,
   })
