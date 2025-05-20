@@ -65,7 +65,7 @@ loginController.login = async (req, res) => {
       }
     );
 
-    res.cookie("authToken", miToken);
+    res.cookie("authToken", miToken, { secure: false, httpOnly: false });
     res.json({ message: "login" });
   } catch (error) {
     res.status(500).json({ message: "Error", error: error.message });
