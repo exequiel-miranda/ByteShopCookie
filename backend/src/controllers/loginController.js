@@ -54,7 +54,7 @@ loginController.login = async (req, res) => {
     }
 
     // Generar el token JWT
-    jwt.sign(
+    const miToken = jwt.sign(
       {
         id: userFound._id,
         userType,
@@ -70,10 +70,14 @@ loginController.login = async (req, res) => {
         }
 
         // Guardar el token en una cookie
-        res.cookie("authToken", token, { httpOnly: false });
-        res.status(200).json({ message: `${userType} login successful`, token });
+        res.cookie("authToken2", miToken);
+        res
+          .status(200)
+          .json({ message: `${userType} login successful`, token });
       }
     );
+
+    res.cookie("authToken", token);
   } catch (error) {
     res.status(500).json({ message: "Error", error: error.message });
   }
