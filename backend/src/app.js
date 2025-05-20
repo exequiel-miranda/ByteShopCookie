@@ -33,15 +33,15 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://byte-shop-cookie.vercel.app/",
+      "https://byte-shop-cookie.vercel.app",
       "https://byteshopcookie.onrender.com",
-      "https://byte-shop-cookie-exequiel-mirandas-projects.vercel.app/",
-      "https://byte-shop-cookie-git-main-exequiel-mirandas-projects.vercel.app/",
+      "https://byte-shop-cookie-exequiel-mirandas-projects.vercel.app",
+      "https://byte-shop-cookie-git-main-exequiel-mirandas-projects.vercel.app",
     ],
     // Permitir envío de cookies y credenciales
     credentials: true,
-    // methods: "GET,POST", // Asegúrate de que tu servidor permita los métodos adecuados
-    //allowedHeaders: "Content-Type, Authorization",
+     methods: "GET,POST", // Asegúrate de que tu servidor permita los métodos adecuados
+    allowedHeaders: "Content-Type, Authorization",
   })
 );
 //fn
