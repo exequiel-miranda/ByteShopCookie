@@ -79,6 +79,7 @@ const renderBody = useCallback(() => {
 
       const data = await response.json();
       alert("Login ok");
+      navigate("/dashboard");
       //localStorage.setItem("authToken", data.token);
       //localStorage.setItem("user", JSON.stringify({ email }));
       //setAuthCokie(data.token);
