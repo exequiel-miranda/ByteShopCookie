@@ -68,7 +68,7 @@ const renderBody = useCallback(() => {
       const response = await fetch(`${SERVER_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "include",
+       // credentials: "include",
         body: JSON.stringify({ email, password }),
       });
 
